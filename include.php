@@ -4,10 +4,11 @@ function logger($log){
         file_put_contents('log.txt','');
     }
     $ip = $_SERVER['REMOTE_ADDR'];
-    $time= date('m/d/Y H:i:s , time()');
-    $content = file_get_contents('log.txt');
-    $content .="$ip\$time\$log\r";
+    date_default_timezone_set('Europe/Paris');
+    $time= date('m/d/Y H:ia');
+    $contents = file_get_contents('log.txt');
+    $contents .="$ip\t$time\t$log\r";
 
-    file_put_contents("log.txt", $content);
+    file_put_contents("log.txt", $contents);
 }
  ?>

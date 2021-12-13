@@ -1,13 +1,15 @@
 <?php 
-include'./include.php';
+include'include.php';
 if($_SERVER['REQUEST_METHOD']==='POST'){
     $number= $_POST['number'];
     if($number!= 5){
-        $log=("User put incorrect number ($number");
-        logger('$log');
-        echo "Invalid number";
+        $log=("User put incorrect number ($number)");
+        logger($log);
+        echo "$number Invalid number";
     }else{
-        echo "Valid number";
+        $log=("User put correct number ($number)");
+        logger($log);
+        echo "$number Valid number";
     }
 }
 ?>
